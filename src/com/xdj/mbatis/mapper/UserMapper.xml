@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdj.mbatis.mapper.UserMapper">
+
+	<select id="getUserById" parameterType="java.lang.Integer" resultType="User">
+		SELECT 
+			`id`,
+			`na_me`,
+			`age` ,
+			`ag_e2`
+		FROM
+			`users` 
+		where id=#{id} 
+	</select>
+	
+	<select id="testGroupBy" resultType="int">
+		SELECT 
+		  `ag_e2` 
+		FROM
+		  `mybatis`.`users`  u
+		GROUP BY u.`ag_e2`
+	</select>
+
+</mapper>
